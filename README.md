@@ -1,5 +1,5 @@
 # Weather-Dashboard
-📖 **Project Summary
+📖 <u>**Project Summary**</u>
 
 The Weather Dashboard is a lightweight, professional, and interactive web application built with Vue.js and TailwindCSS. It allows users to search for a city and instantly view weather details such as temperature, humidity, wind speed, and general conditions. The project is designed as a showcase of modern frontend development practices, balancing both visual appeal and practical functionality. Currently, it runs on mock data for demonstration purposes, but it can be easily integrated with a real weather API like OpenWeatherMap.
 
