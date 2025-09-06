@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Vue.js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen flex items-center justify-center">
+  <div id="app" class="bg-white shadow-2xl rounded-2xl p-6 w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center text-indigo-700">Weather Dashboard ⛅</h1>
+
+    <!-- Search Bar -->
+    <div class="flex mb-6">
+      <input v-model="city" @keyup.enter="getWeather" type="text" placeholder="Enter city name..."
+        class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      <button @click="getWeather"
+        class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-r-lg transition">Search</button>
+    </div>
+
+    <!-- Weather Card -->
+    <div v-if="weather" class="bg-gradient-to-r from-indigo-500 to-blue-400 text-white rounded-xl p-6 text-center">
+      <h2 class="text-xl font-semibold">{{ weather.city }}</h2>
+      <p class="text-sm mb-4">{{ weather.condition }}</p>
+      <p class="text-5xl font-bold mb-2">{{ weather.temp }}°C</p>
+      <div class="flex justify-around text-sm">
+        <div>
+          <p class="font-semibold">Humidity</p>
+          <p>{{ weather.humidity }}%</p>
+        </div>
+        <div>
+          <p class="font-semibold">Wind</p>
+          <p>{{ weather.wind }} km/h</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <p v-else class="text-center text-gray-500 mt-4">Search a city to view weather 🌍</p>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          city: "",
+          weather: null
+        };
+      },
+      methods: {
+        getWeather() {
+          if (!this.city.trim()) return;
+
+          // Mock weather data (replace with API call if needed)
+          const conditions = ["Sunny", "Cloudy", "Rainy", "Stormy", "Windy"];
+          this.weather = {
+            city: this.city,
+            condition: conditions[Math.floor(Math.random() * conditions.length)],
+            temp: (Math.random() * 15 + 15).toFixed(1),
+            humidity: Math.floor(Math.random() * 50 + 30),
+            wind: Math.floor(Math.random() * 20 + 5)
+          };
+
+          this.city = "";
+        }
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>
