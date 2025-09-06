@@ -44,8 +44,6 @@ Preparing code for API integration and real-world scalability.
 📊 Analytics Dashboard → Add graphs for temperature trends over time.
 
 📚 **References**
+1.) Vue.js Course Video :- https://youtu.be/8pn9KEuXG28?feature=shared
+2.) Html and CSS Video :- https://youtu.be/G3e-cpL7ofc?feature=shared
 
-1.) Vue.js 3 Documentation
-2.) TailwindCSS Documentation
-3.) Vue.js Course Video :- https://youtu.be/8pn9KEuXG28?feature=shared
-MDN Web Docs – Fetch API
