@@ -45,7 +45,7 @@ Preparing code for API integration and real-world scalability.
 
 📚 **References**
 
-Vue.js 3 Documentation
-TailwindCSS Documentation
-OpenWeatherMap API
+1.) Vue.js 3 Documentation
+2.) TailwindCSS Documentation
+3.) Vue.js Course Video :- https://youtu.be/8pn9KEuXG28?feature=shared
 MDN Web Docs – Fetch API
